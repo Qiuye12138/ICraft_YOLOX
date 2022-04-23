@@ -24,7 +24,7 @@ class Exp(BaseExp):
         # factor of model width
         self.width = 1.00
         # activation name. For example, if using "relu", then "silu" will be replaced to "relu".
-        self.act = "silu"
+        self.act = "lrelu" # "silu"
 
         # ---------------- dataloader config ---------------- #
         # set worker to 4 for shorter dataloader init time

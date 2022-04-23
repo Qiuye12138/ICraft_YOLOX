@@ -137,6 +137,8 @@ class Trainer:
             "Model Summary: {}".format(get_model_info(model, self.exp.test_size))
         )
         model.to(self.device)
+        model.backbone.backbone.stem.weights = model.backbone.backbone.stem.weights.to(self.device)
+        model.backbone.backbone.stem.weights = model.backbone.backbone.stem.weights.to(self.data_type)
 
         # solver related init
         self.optimizer = self.exp.get_optimizer(self.args.batch_size)

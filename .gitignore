@@ -208,6 +208,7 @@ docs/api
 .code-workspace.code-workspace
 *.pkl
 *.npy
+*.pt
 *.pth
 *.onnx
 *.engine
