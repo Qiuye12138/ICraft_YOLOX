@@ -168,7 +168,8 @@ class COCOEvaluator:
                 is_time_record = cur_iter < len(self.dataloader) - 1
                 if is_time_record:
                     start = time.time()
-
+                model.backbone.backbone.stem.weights = model.backbone.backbone.stem.weights.to(imgs.device)
+                model.backbone.backbone.stem.weights = model.backbone.backbone.stem.weights.to(imgs.dtype)
                 outputs = model(imgs)
                 if decoder is not None:
                     outputs = decoder(outputs, dtype=outputs.type())
